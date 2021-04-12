@@ -1,0 +1,107 @@
+body{
+    font-size: 12px;
+    font-family: fira code;
+}
+
+input[type=text] {
+    border: 1px solid #030303;
+    border-top-right-radius: 25px;  
+    border-bottom-right-radius: 0px; 
+    border-top-right-radius: 25px; 
+}
+
+input[type=email] {
+    border: 1px solid #030303;
+    border-top-right-radius: 25px;  
+    border-bottom-right-radius: 0px; 
+    border-top-right-radius: 25px; 
+}
+
+textarea[class=form-control] {
+    border: 1px solid #030303;
+    border-top-right-radius: 25px;  
+    border-bottom-right-radius: 0px; 
+    border-top-right-radius: 25px; 
+}
+
+input[type=number] {
+    border: 1px solid #030303;
+    border-top-left-radius: 0px;  
+    border-bottom-left-radius: 0px; 
+    border-top-right-radius: 25px;  
+    border-bottom-right-radius: 0px; 
+    border-top-right-radius: 25px; 
+    width: 120%;
+}
+
+input[type=phone] {
+    border: 1px solid #030303;
+    border-top-right-radius: 25px;  
+    border-bottom-right-radius: 0px; 
+    border-top-right-radius: 25px;
+}
+
+.form-group>button {
+font-family: fira code;
+margin-top: 20px;
+font-size: 13px;
+}
+
+.col-md-12 {
+margin-top: 30px;
+font-family: fira code;
+}
+
+.card{
+    max-height:100%;
+    font-family: fira code;
+    height:80%;
+    border:1px thick   black;
+}
+
+.col-md-8>span{
+    text-align:center;
+    font-size: 21px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.navbar {
+font-family: fira code;
+}
+
+table{
+margin-top: 30px;
+}
+
+nav{
+background-color: #333;
+color: white;
+}
+
+form .error {
+    color: #ff0000;
+}
+
+button[type="submit"]{
+    font-family: ubuntu;
+    border: 1px solid #333;
+}
+
+button[type="submit"]:hover{
+    background-color:black;
+    color:white;
+}
+
+button[type="reset"]{
+    font-family: ubuntu;
+    background-color: white;
+    color:black;
+    border: 1px solid #333;
+}
+
+button[type="reset"]:hover{
+    background-color:red;
+    color:white;
+}
+
