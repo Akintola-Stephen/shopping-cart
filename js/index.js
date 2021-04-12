@@ -25,8 +25,8 @@ function Submit(event) {
           databaseRegisteredUsers[i].qty, databaseRegisteredUsers[i].mob,
           databaseRegisteredUsers[i].tarea
             );
-        }      
-    
+        }
+
   $('#fetch').click(function () {
       chat.server.fetchRecords();
   })
@@ -52,7 +52,7 @@ form.addEventListener("submit", Submit);
             document.getElementById('delMail').innerHTML,
             document.getElementById('delMob').innerHTML
             );
-          } 
+          }
         })
   );
 
@@ -64,7 +64,7 @@ var display = document.getElementById("qty");
 
 btn.onclick = function () {
     count++;
-    display.value = count;      
+    display.value = count;
 }
 
 
@@ -74,7 +74,7 @@ var badgeBtn = document.getElementById("submit");
 var badgeDisplay = document.getElementById("badgeValue");
 
 badgeBtn.onclick = function () {
-    badgeDisplay.innerHTML = (databaseRegisteredUsers.length) + 1;      
+    badgeDisplay.innerHTML = (databaseRegisteredUsers.length) + 1;
 }
 
 
@@ -111,13 +111,13 @@ $('#fetch').click(function () {
     var chat = $.connection.chatHub;
     records = [];
     data = chat.server.fetchRecords().then(console.log);
-    //console.log(data)
-    records.push(data)
-    console.log(records["RESULT"])
+    console.log(data)
+    // records.push(data)
+    // console.log(records)
     if (records.length > 0){
       let html = "";
       for (var i= 0; i < records.length; i++){
-        console.log(i, records[i])
+        //console.log(records[i])
         html += "<tr>"
         html += "<td>" + records[i].f_name +"<td>"
         html += "<td id='delMail'>" + records[i].mail +"<td>"
