@@ -1,4 +1,3 @@
-var registeredUsers = [];
 var databaseRegisteredUsers = [];
 
 function clearForm(form) {
@@ -11,7 +10,6 @@ function getDataFromFormData(data) {
 }
 
 
-
 function Submit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
@@ -21,22 +19,19 @@ function Submit(event) {
     // Establish a connection to database
     $.connection.hub.start().done(function () {
       console.log('connected !!!')
-      $('[type="submit"]').click(function () {
         for (let i = 0; i < databaseRegisteredUsers.length; i++){
           chat.server.interns_Insert(
-            databaseRegisteredUsers[i].f_name, databaseRegisteredUsers[i].mail,
-            databaseRegisteredUsers[i].qty, databaseRegisteredUsers[i].mob,
-            databaseRegisteredUsers[i].tarea
+          databaseRegisteredUsers[i].f_name, databaseRegisteredUsers[i].mail,
+          databaseRegisteredUsers[i].qty, databaseRegisteredUsers[i].mob,
+          databaseRegisteredUsers[i].tarea
             );
         }      
-      });
-
-
-  $('.button').click(function () {
+    
+  $('#fetch').click(function () {
       chat.server.fetchRecords();
   })
-
 });
+
 
    // if (Object.keys(registeredUsers[0].length === 0);
     console.log(databaseRegisteredUsers);
@@ -44,8 +39,22 @@ function Submit(event) {
     generateTable(table,[databaseRegisteredUsers[databaseRegisteredUsers.length - 1]]);
 }
 
+
 const form = document.querySelector('#reg-form');
 form.addEventListener("submit", Submit);
+
+  $("#del").click(
+      // Establish a connection to database
+      $.connection.hub.start().done(function () {
+        console.log('connected !!!')
+          for (let i = 0; i < databaseRegisteredUsers.length; i++){
+            chat.server.interns_delete_SignalR(
+            databaseRegisteredUsers[i].mail,
+            databaseRegisteredUsers[i].mob
+            );
+          } 
+        })
+  );
 
 
 // Button that populates input button value
@@ -88,7 +97,7 @@ function generateTable(table, data) {
           html += "<td>" + databaseRegisteredUsers[i].qty +"<td>"
           html += "<td>" + databaseRegisteredUsers[i].tarea +"<td>"
           html += "<td onclick='editForm()'><button  class='btn btn-success' data-index="+i+" id='update"+i+"'>edit</button><td>"
-          html += "<td onclick='removeRow()'><button  class='btn btn-danger'  id='delete"+i+"'>Delete</button><td>"
+          html += "<td onclick='removeRow()'><button class='btn btn-danger'  id='del"+i+"'>Delete</button><td>"
           html += "</tr>"
         }
         $("table tbody").html(html);

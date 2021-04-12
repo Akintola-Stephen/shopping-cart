@@ -35,12 +35,16 @@ Public Class DAL
     End Function
 
 
-    Public Function delete_SignalR(
-        ByVal productID As Integer 
-    ) As DataSet
+    Public Function interns_delete_SignalR(
+        ByVal email As String,
+        ByVal phoneNumber As String
+        ) As DataSet
         BLL.WriteLog("delete_SignalR function called")
         Try
-            Dim params() As SqlParameter = {New SqlParameter("ID", productID)}
+              Dim params() As SqlParameter = { 
+                                                New SqlParameter("@Email", email),
+                                                New SqlParameter("@Mobile", phoneNumber)
+                                             }
 
             Return SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "DELETE_PRODUCT", params)
         
