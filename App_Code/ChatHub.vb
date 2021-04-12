@@ -58,7 +58,7 @@ Imports System.Drawing
         End Function
 
 
-     Public Function fetchRecords() As String
+    Public Function fetchRecords() As String
         Dim status As String = "ERROR"
         Dim dc_return As New Dictionary(Of String, Object)
         Try
@@ -68,13 +68,14 @@ Imports System.Drawing
                 dc_return.Add("RESULT", dt)
                 status = "SUCCESS"
 
-          
+        
         Catch ex As Exception
             BLL.WriteLog(ex.Message + " : " + ex.StackTrace)
         End Try
         dc_return.Add("STATUS", status)
         Clients.All.broadcastrecords(JsonConvert.SerializeObject(dc_return))
-        End Function
+        return JsonConvert.SerializeObject(dc_return)
+    End Function
 
     End Class
 

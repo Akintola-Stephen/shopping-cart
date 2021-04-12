@@ -49,8 +49,8 @@ form.addEventListener("submit", Submit);
         console.log('connected !!!')
           for (let i = 0; i < databaseRegisteredUsers.length; i++){
             chat.server.interns_delete_SignalR(
-            databaseRegisteredUsers[i].mail,
-            databaseRegisteredUsers[i].mob
+            document.getElementById('delMail').innerHTML,
+            document.getElementById('delMob').innerHTML
             );
           } 
         })
@@ -77,27 +77,20 @@ badgeBtn.onclick = function () {
     badgeDisplay.innerHTML = (databaseRegisteredUsers.length) + 1;      
 }
 
-// $('#fetch').click(function () {
-//   $.connection.hub.start().done(function(){
-//     var chat = $.connection.chatHub;
-//     data = chat.server.fetchRecords();
-//     console.log(data)
-//   })
-// })
 
 function generateTable(table, data) {
-
       if (databaseRegisteredUsers.length > 0){
         let html = "";
         for (var i= 0; i < databaseRegisteredUsers.length; i++){
           console.log(i, databaseRegisteredUsers[i])
           html += "<tr>"
           html += "<td>" + databaseRegisteredUsers[i].f_name +"<td>"
-          html += "<td>" + databaseRegisteredUsers[i].mail +"<td>"
+          html += "<td id='delMail'>" + databaseRegisteredUsers[i].mail +"<td>"
           html += "<td>" + databaseRegisteredUsers[i].qty +"<td>"
+          html += "<td>" + databaseRegisteredUsers[i].mob +"<td>"
           html += "<td>" + databaseRegisteredUsers[i].tarea +"<td>"
           html += "<td onclick='editForm()'><button  class='btn btn-success' data-index="+i+" id='update"+i+"'>edit</button><td>"
-          html += "<td onclick='removeRow()'><button class='btn btn-danger'  id='del"+i+"'>Delete</button><td>"
+          html += "<td onclick='removeRow()'><button class='btn btn-danger' data-index="+i+">Delete</button><td>"
           html += "</tr>"
         }
         $("table tbody").html(html);
@@ -110,6 +103,37 @@ function removeRow(){
     return false;
   })
 }
+
+
+$('#fetch').click(function () {
+  $.connection.hub.start().done(function(){
+    console.log('fetch all records connection activated !')
+    var chat = $.connection.chatHub;
+    records = [];
+    data = chat.server.fetchRecords().then(console.log);
+    //console.log(data)
+    records.push(data)
+    console.log(records["RESULT"])
+    if (records.length > 0){
+      let html = "";
+      for (var i= 0; i < records.length; i++){
+        console.log(i, records[i])
+        html += "<tr>"
+        html += "<td>" + records[i].f_name +"<td>"
+        html += "<td id='delMail'>" + records[i].mail +"<td>"
+        html += "<td>" + records[i].qty +"<td>"
+        html += "<td>" + records[i].mob +"<td>"
+        html += "<td>" + records[i].tarea +"<td>"
+        html += "<td onclick='editForm()'><button  class='btn btn-success' data-index="+i+" id='update"+i+"'>edit</button><td>"
+        html += "<td onclick='removeRow()'><button class='btn btn-danger' data-index="+i+">Delete</button><td>"
+        html += "</tr>"
+      }
+      $("table tbody").html(html);
+    }
+  })
+  generateTable(table,[records[records.length - 1]]);
+})
+
 
 
 let table = document.querySelector("table");

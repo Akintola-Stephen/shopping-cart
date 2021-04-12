@@ -105,3 +105,8 @@ button[type="reset"]:hover{
     color:white;
 }
 
+.contain{
+    margin-left:30px;
+    margin-right: 30px;
+}
+
