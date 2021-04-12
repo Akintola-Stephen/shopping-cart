@@ -26,10 +26,6 @@ function Submit(event) {
           databaseRegisteredUsers[i].tarea
             );
         }
-
-  $('#fetch').click(function () {
-      chat.server.fetchRecords();
-  })
 });
 
 
