@@ -26,27 +26,28 @@ function Submit(event) {
           databaseRegisteredUsers[i].tarea
             );
         }
+       generateTable(table,[databaseRegisteredUsers[databaseRegisteredUsers.length - 1]]);
 });
 
 
    // if (Object.keys(registeredUsers[0].length === 0);
     console.log(databaseRegisteredUsers);
     clearForm(event.target);
-    generateTable(table,[databaseRegisteredUsers[databaseRegisteredUsers.length - 1]]);
+    //generateTable(table,[databaseRegisteredUsers[databaseRegisteredUsers.length - 1]]);
 }
 
 
 const form = document.querySelector('#reg-form');
 form.addEventListener("submit", Submit);
 
-  $("#del").click(
+  $("#delMail").click(
       // Establish a connection to database
       $.connection.hub.start().done(function () {
         console.log('connected !!!')
           for (let i = 0; i < databaseRegisteredUsers.length; i++){
             chat.server.interns_delete_SignalR(
-            document.getElementById('delMail').innerHTML,
-            document.getElementById('delMob').innerHTML
+            document.getElementById('mailto').innerHTML,
+            document.getElementById('mobto').innerHTML
             );
           }
         })
@@ -73,7 +74,8 @@ badgeBtn.onclick = function () {
     badgeDisplay.innerHTML = (databaseRegisteredUsers.length) + 1;
 }
 
-
+// CRUD OPERATIONS
+// CREATE AND RETRIEVE
 function generateTable(table, data) {
       if (databaseRegisteredUsers.length > 0){
         let html = "";
@@ -81,24 +83,41 @@ function generateTable(table, data) {
           console.log(i, databaseRegisteredUsers[i])
           html += "<tr>"
           html += "<td>" + databaseRegisteredUsers[i].f_name +"<td>"
-          html += "<td id='delMail'>" + databaseRegisteredUsers[i].mail +"<td>"
+          html += "<td id='mailto'>" + databaseRegisteredUsers[i].mail +"<td>"
           html += "<td>" + databaseRegisteredUsers[i].qty +"<td>"
-          html += "<td>" + databaseRegisteredUsers[i].mob +"<td>"
+          html += "<td id='mobto'>" + databaseRegisteredUsers[i].mob +"<td>"
           html += "<td>" + databaseRegisteredUsers[i].tarea +"<td>"
           html += "<td onclick='editForm()'><button  class='btn btn-success' data-index="+i+" id='update"+i+"'>edit</button><td>"
-          html += "<td onclick='removeRow()'><button class='btn btn-danger' data-index="+i+">Delete</button><td>"
+          html += "<td onclick='removeRow()'><button class='btn btn-danger' id='delMail' data-index="+i+">Delete</button><td>"
           html += "</tr>"
         }
         $("table tbody").html(html);
       }
     }
 
+// DELETE
 function removeRow(){
   $("table tr").click(function(){
     $(this).remove();
     return false;
   })
 }
+
+
+$('#delBtn').click(function(){
+  $.connection.hu.start().done(function(){
+    var chat = $.connect.chatHub;
+    for (let j = 0; j < databaseRegisteredUsers.length; j++)
+    {
+      chat.server.interns_delete_SignalR(
+        databaseRegisteredUsers[j].mail,
+        databaseRegisteredUsers[j].mob
+      )
+    }
+  })
+})
+
+
 
 
 $('#fetch').click(function () {
@@ -121,7 +140,7 @@ $('#fetch').click(function () {
         html += "<td>" + records[i].mob +"<td>"
         html += "<td>" + records[i].tarea +"<td>"
         html += "<td onclick='editForm()'><button  class='btn btn-success' data-index="+i+" id='update"+i+"'>edit</button><td>"
-        html += "<td onclick='removeRow()'><button class='btn btn-danger' data-index="+i+">Delete</button><td>"
+        html += "<td onclick='removeRow()'><button id='delBtn' class='btn btn-danger' data-index="+i+">Delete</button><td>"
         html += "</tr>"
       }
       $("table tbody").html(html);
