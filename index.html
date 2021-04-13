@@ -10,6 +10,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 
   <link rel="stylesheet" type="text/css" href="index.css">
@@ -70,32 +77,32 @@
               <label for="qty">Item Quantity:</label>
               <div class="input-group mb-3">
                 <div class="input-group-append">
-
                   <button class="btn btn-outline-secondary" id="cty" type="button">count</button>
                   <input type="number" min=1 name="qty" class="form-control" aria-label=""
                     aria-describedby="basic-addon1" id="qty" value="1">
-
                 </div>
-
               </div>
+            </div>
             </div>
 
 
             <div class="form-group">
               <label for="mob">Mobile:</label>
-              <input type="phone" name="mob" class="form-control" id="mob" />
+              <input type="phone" name="mob" class="form-control" id="mob" >
             </div>
 
-            <textarea class="form-control" id="msg" name="tarea">
-                        </textarea>
+            <textarea class="materialize-textarea" id="msg" name="tarea">
+            </textarea>
 
 
             <div class="form-group" style="margin-top: 20px;">
-              <button class="btn btn-success" id="addtoCart">Add to product</button>
+              <button class="btn waves-effect waves-light" id="addtoCart">
+                Add to product 
+              </button>
 
-              <button type="reset" id="reset" class="btn btn-danger">Reset values</button>
+              <button type="reset" id="reset" class="btn waves-effect waves-red">Reset values</button>
 
-              <button class="btn btn-success" id="submit">Check Out</button>
+              <button class="btn waves-effect waves-red" id="submit">Check Out</button>
             </div>
             </form>
           </div>

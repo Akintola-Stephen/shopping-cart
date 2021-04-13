@@ -30,7 +30,6 @@ var pageload = function(){
                   );
               }
           });
-      
         },
         generateTable: function(){
             let html = "";
@@ -42,7 +41,7 @@ var pageload = function(){
               html += "<td>" + databaseRegisteredUsers[i].qty +"<td>"
               html += "<td id='mobto'>" + databaseRegisteredUsers[i].mob +"<td>"
               html += "<td>" + databaseRegisteredUsers[i].tarea +"<td>"
-              html += "<td><button  class='btn btn-success editBtn' data-index="+i+" id='update"+i+"'>edit</button><td>"
+              html += "<td><button  class='btn btn-success editBtn' style= 'background-color;green;' data-index="+i+" id='update"+i+"'>edit</button><td>"
               html += "<td'><button class='btn btn-danger deleteBtn' id='delMail' data-index="+i+">Delete</button><td>"
               html += "</tr>"
             }
