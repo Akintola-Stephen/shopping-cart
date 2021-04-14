@@ -14,15 +14,15 @@ Imports System.Drawing
         Dim DAL As New DAL
 
         Public Function interns_Insert(
-            ByVal Jsonstring As String,
-            ByVal actiontype As String 
+            ByVal JSON_STRING As String,
+            ByVal ACTION_TYPE As String  
             ) As String
             BLL.WriteLog("here")
             Dim status As String = "ERROR"
             Dim dc_return As New Dictionary(Of String, Object)
             
             Try
-                Dim ds As DataSet = DAL.internsInsert_SignalR(Jsonstring, actiontype)
+                Dim ds As DataSet = DAL.internsInsert_SignalR(JSON_STRING, ACTION_TYPE)
                 Dim dt As DataTable = ds.Tables(0)
                 dc_return.Add("RESULT", dt)
                 status = "SUCCESS"
@@ -58,13 +58,13 @@ Imports System.Drawing
 
 
     Public Function fetchRecords(
-        ByVal Jsonstring As String,
-        ByVal actiontype As String 
+        ByVal JSON_STRING As String,
+        ByVal ACTION_TYPE As String   
     ) As String
         Dim status As String = "ERROR"
         Dim dc_return As New Dictionary(Of String, Object)
         Try
-                Dim ds As DataSet = DAL.fetchRecords(Jsonstring, actiontype)
+                Dim ds As DataSet = DAL.fetchRecords(JSON_STRING, ACTION_TYPE)
                 Dim dt As DataTable = ds.Tables(0)
                 
                 dc_return.Add("RESULT", dt)

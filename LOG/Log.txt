@@ -1,8 +1,88 @@
-here | 14/04/2021 12:23:32 pm
-here 2 | 14/04/2021 12:23:32 pm
+here | 14/04/2021 12:28:19 pm
+here 2 | 14/04/2021 12:28:19 pm
 Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
-   at ChatHub.interns_Insert(String Jsonstring, String actiontype) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:23:32 pm
-here | 14/04/2021 12:24:22 pm
-here 2 | 14/04/2021 12:24:22 pm
+   at ChatHub.interns_Insert(String Jsonstring, String actiontype) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:28:19 pm
+here | 14/04/2021 12:31:32 pm
+here 2 | 14/04/2021 12:31:32 pm
 Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
-   at ChatHub.interns_Insert(String Jsonstring, String actiontype) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:24:22 pm
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:31:32 pm
+here | 14/04/2021 12:31:33 pm
+here 2 | 14/04/2021 12:31:33 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:31:33 pm
+here | 14/04/2021 12:33:16 pm
+here 2 | 14/04/2021 12:33:16 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:33:16 pm
+here | 14/04/2021 12:38:15 pm
+here 2 | 14/04/2021 12:38:15 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:38:16 pm
+here | 14/04/2021 12:41:22 pm
+here 2 | 14/04/2021 12:41:22 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:41:22 pm
+here | 14/04/2021 12:42:22 pm
+here 2 | 14/04/2021 12:42:22 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:42:22 pm
+here | 14/04/2021 12:54:36 pm
+here 2 | 14/04/2021 12:54:36 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:54:36 pm
+here | 14/04/2021 12:54:44 pm
+here 2 | 14/04/2021 12:54:44 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:54:44 pm
+here | 14/04/2021 12:58:06 pm
+here 2 | 14/04/2021 12:58:06 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:58:06 pm
+here | 14/04/2021 12:58:12 pm
+here 2 | 14/04/2021 12:58:12 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:58:12 pm
+here | 14/04/2021 12:59:51 pm
+here 2 | 14/04/2021 12:59:51 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:59:51 pm
+here | 14/04/2021 1:00:31 pm
+here 2 | 14/04/2021 1:00:31 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 1:00:31 pm
+here | 14/04/2021 1:02:34 pm
+here 2 | 14/04/2021 1:02:34 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 1:02:34 pm
+here | 14/04/2021 1:03:00 pm
+here 2 | 14/04/2021 1:03:00 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 1:03:00 pm
+here | 14/04/2021 1:04:28 pm
+here 2 | 14/04/2021 1:04:28 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 1:04:28 pm
+here | 14/04/2021 1:05:51 pm
+here 2 | 14/04/2021 1:05:51 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 1:05:51 pm
+here | 14/04/2021 1:06:37 pm
+here 2 | 14/04/2021 1:06:37 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 1:06:37 pm
+here | 14/04/2021 1:06:53 pm
+here 2 | 14/04/2021 1:06:53 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 1:06:53 pm
+here | 14/04/2021 1:07:17 pm
+here 2 | 14/04/2021 1:07:17 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 1:07:17 pm
+here | 14/04/2021 1:28:29 pm
+here 2 | 14/04/2021 1:28:29 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 1:28:29 pm
+here | 14/04/2021 1:39:12 pm
+here 2 | 14/04/2021 1:39:12 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String JSON_STRING, String ACTION_TYPE) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 1:39:12 pm

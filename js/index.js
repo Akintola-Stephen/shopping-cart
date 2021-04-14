@@ -7,21 +7,24 @@ var pageload = function(){
         },
         addProduct: function(event){
           event.preventDefault();
-          var myobj = pageload.getDataFromFormData();
-          console.log(myobj);
-          databaseRegisteredUsers.push(myobj);
           
           // SignalR code that connects VB and JS code together 
           $.connection.hub.start().done(function () {
             var chat = $.connection.chatHub;
             console.log('connected !!!')
+            var myobj = pageload.getDataFromFormData();
+            //console.log(myobj)
+            databaseRegisteredUsers.push(myobj);
+            console.log(databaseRegisteredUsers)
+            //databaseRegisteredUsers = {}
+
             var JSON_STRING = JSON.stringify(databaseRegisteredUsers);
             chat.server.interns_Insert(JSON_STRING, 'INSERT');         
           });
           myobj ={};
           console.log(databaseRegisteredUsers);
           pageload.clearForm(event.target);
-          pageload.generateTable();
+        //  pageload.generateTable();
           $("#badgeValue").html(databaseRegisteredUsers.length);
         },
         checkOut: function(){
@@ -30,6 +33,9 @@ var pageload = function(){
           // Establish a connection to database
           $.connection.hub.start().done(function () {
             console.log('connected !!!')
+            var myobj = pageload.getDataFromFormData();
+            console.log(myobj);
+            databaseRegisteredUsers.push(myobj);
             var JSON_STRING = JSON.stringify(databaseRegisteredUsers);
             chat.server.interns_Insert(JSON_STRING, 'INSERT');         
           });
