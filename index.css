@@ -1,6 +1,6 @@
 body{
     font-size: 12px;
-    font-family: fira code;
+    font-family: Ubuntu Light;
 }
 
 input[type=text] {
@@ -42,19 +42,19 @@ input[type=phone] {
 }
 
 .form-group>button {
-font-family: fira code;
+font-family: Ubuntu Light;
 margin-top: 20px;
 font-size: 13px;
 }
 
 .col-md-12 {
 margin-top: 30px;
-font-family: fira code;
+font-family: Ubuntu Light;
 }
 
 .card{
     max-height:100%;
-    font-family: fira code;
+    font-family: Ubuntu Light;
     height:80%;
     border:1px thick   black;
 }
@@ -67,7 +67,7 @@ font-family: fira code;
 }
 
 .navbar {
-font-family: fira code;
+font-family: Ubuntu Light;
 }
 
 table{

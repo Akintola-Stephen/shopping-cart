@@ -5,28 +5,33 @@ var pageload = function(){
         init: function(){
          pageload.pageEvents();
         },
+
         addProduct: function(event){
           event.preventDefault();
           
-          // SignalR code that connects VB and JS code together 
+          // SignalR code that allows communication between VB and JS code together 
+          var chat = $.connection.chatHub;
+          console.warn(chat);
+          
+          // Establish a connection to database
           $.connection.hub.start().done(function () {
-            var chat = $.connection.chatHub;
             console.log('connected !!!')
             var myobj = pageload.getDataFromFormData();
-            //console.log(myobj)
+            console.log(myobj);
             databaseRegisteredUsers.push(myobj);
-            console.log(databaseRegisteredUsers)
-            //databaseRegisteredUsers = {}
 
+             //  pageload.generateTable();
+            pageload.generateTable(); 
             var JSON_STRING = JSON.stringify(databaseRegisteredUsers);
             chat.server.interns_Insert(JSON_STRING, 'INSERT');         
           });
-          myobj ={};
+          
           console.log(databaseRegisteredUsers);
           pageload.clearForm(event.target);
-        //  pageload.generateTable();
+       
           $("#badgeValue").html(databaseRegisteredUsers.length);
         },
+
         checkOut: function(){
          var chat = $.connection.chatHub;
           console.warn(chat);
@@ -40,6 +45,7 @@ var pageload = function(){
             chat.server.interns_Insert(JSON_STRING, 'INSERT');         
           });
         },
+
         generateTable: function(){
             let html = "";
             for (var i= 0; i < databaseRegisteredUsers.length; i++){
