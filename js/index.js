@@ -13,9 +13,10 @@ var pageload = function(){
           
           // SignalR code that connects VB and JS code together 
           $.connection.hub.start().done(function () {
+            var chat = $.connection.chatHub;
             console.log('connected !!!')
-            var JSONSTRING = JSON.stringify(databaseRegisteredUsers);
-            chat.server.interns_Insert(JSONSTRING, 'INSERT');         
+            var JSON_STRING = JSON.stringify(databaseRegisteredUsers);
+            chat.server.interns_Insert(JSON_STRING, 'INSERT');         
           });
           myobj ={};
           console.log(databaseRegisteredUsers);
@@ -29,8 +30,8 @@ var pageload = function(){
           // Establish a connection to database
           $.connection.hub.start().done(function () {
             console.log('connected !!!')
-            var JSONSTRING = JSON.stringify(databaseRegisteredUsers);
-            chat.server.interns_Insert(JSONSTRING, 'INSERT');         
+            var JSON_STRING = JSON.stringify(databaseRegisteredUsers);
+            chat.server.interns_Insert(JSON_STRING, 'INSERT');         
           });
         },
         generateTable: function(){
@@ -86,20 +87,21 @@ var pageload = function(){
               console.log('fetch all records connection activated !')
               var chat = $.connection.chatHub;
               records = [];
-              data = chat.server.fetchRecords().then(console.log);
+              JSONSTRING = JSON.stringify(databaseRegisteredUsers)
+              data = chat.server.fetchRecords(JSONSTRING, 'SELECT').then(console.log);
               console.log(data)
               // records.push(data)
               // console.log(records)
               if (records.length > 0){
                 let html = "";
-                for (var i= 0; i < records.length; i++){
+                for (var i= 0; i < data.length; i++){
                   //console.log(records[i])
                   html += "<tr>"
-                  html += "<td>" + records[i].f_name +"<td>"
-                  html += "<td id='delMail'>" + records[i].mail +"<td>"
-                  html += "<td>" + records[i].qty +"<td>"
-                  html += "<td>" + records[i].mob +"<td>"
-                  html += "<td>" + records[i].tarea +"<td>"
+                  html += "<td>" + data[i].f_name +"<td>"
+                  html += "<td id='delMail'>" + data[i].mail +"<td>"
+                  html += "<td>" + data[i].qty +"<td>"
+                  html += "<td>" + data[i].mob +"<td>"
+                  html += "<td>" + data[i].tarea +"<td>"
                   html += "<td onclick='editForm()'><button  class='btn btn-success' data-index="+i+" id='update"+i+"'>edit</button><td>"
                   html += "<td onclick='removeRow()'><button id='delBtn' class='btn btn-danger' data-index="+i+">Delete</button><td>"
                   html += "</tr>"

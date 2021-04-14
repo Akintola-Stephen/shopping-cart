@@ -57,11 +57,14 @@ Imports System.Drawing
         End Function
 
 
-    Public Function fetchRecords() As String
+    Public Function fetchRecords(
+        ByVal Jsonstring As String,
+        ByVal actiontype As String 
+    ) As String
         Dim status As String = "ERROR"
         Dim dc_return As New Dictionary(Of String, Object)
         Try
-                Dim ds As DataSet = DAL.fetchRecords()
+                Dim ds As DataSet = DAL.fetchRecords(Jsonstring, actiontype)
                 Dim dt As DataTable = ds.Tables(0)
                 
                 dc_return.Add("RESULT", dt)

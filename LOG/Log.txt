@@ -1,0 +1,8 @@
+here | 14/04/2021 12:23:32 pm
+here 2 | 14/04/2021 12:23:32 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String Jsonstring, String actiontype) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:23:32 pm
+here | 14/04/2021 12:24:22 pm
+here 2 | 14/04/2021 12:24:22 pm
+Cannot find table 0. :    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at ChatHub.interns_Insert(String Jsonstring, String actiontype) in C:\inetpub\wwwroot\front-end\App_Code\ChatHub.vb:line 26 | 14/04/2021 12:24:22 pm

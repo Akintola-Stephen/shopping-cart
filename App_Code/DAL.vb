@@ -12,13 +12,13 @@ Public Class DAL
     End Sub
 
     Public Function internsInsert_SignalR(
-        ByVal Jsonstring As String,
-        ByVal actiontype As String 
+        ByVal JSON_STRING As String,
+        ByVal ACTION_TYPE As String 
         ) As DataSet
         BLL.WriteLog("here 2")
         Try
-            Dim params() As SqlParameter = {New SqlParameter("@JSON_STRING", Jsonstring),
-                                            New SqlParameter("@ACTION_TYPE", actiontype)
+            Dim params() As SqlParameter = {New SqlParameter("@JSON_STRING", JSON_STRING),
+                                            New SqlParameter("@ACTION_TYPE", ACTION_TYPE)
                                             }
                                             
             ' INSERT_PRODUCT is used to specify the name of the stored procedure
@@ -54,9 +54,16 @@ Public Class DAL
     End Function
 
     
-    Public Function fetchRecords() As DataSet
+    Public Function fetchRecords(
+        ByVal JSON_STRING As String,
+        ByVal ACTION_TYPE As String 
+    ) As DataSet
         Try
-            Return SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "SELECT_PRODUCT")
+        Dim params() As SqlParameter = {
+                                        New SqlParameter("@JSON_STRING", JSON_STRING),
+                                        New SqlParameter("ACTION_TYPE", ACTION_TYPE)
+                                       }
+            Return SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "MODULE_PRODUCT", params)
         Catch ex As Exception
             BLL.WriteLog(ex.Message + " : " + ex.StackTrace)
             Return Nothing
