@@ -22,13 +22,14 @@ var pageload = function(){
           // Establish a connection to database
           $.connection.hub.start().done(function () {
             console.log('connected !!!')
-              for (let i = 0; i < databaseRegisteredUsers.length; i++){
-                chat.server.interns_Insert(
-                databaseRegisteredUsers[i].f_name, databaseRegisteredUsers[i].mail,
-                databaseRegisteredUsers[i].qty, databaseRegisteredUsers[i].mob,
-                databaseRegisteredUsers[i].tarea
-                  );
-              }
+            var JSONSTRING = JSON.stringify(databaseRegisteredUsers);
+              // for (let i = 0; i < databaseRegisteredUsers.length; i++){
+              //   chat.server.interns_Insert(
+              //   databaseRegisteredUsers[i].f_name, databaseRegisteredUsers[i].mail,
+              //   databaseRegisteredUsers[i].qty, databaseRegisteredUsers[i].mob,
+              //   databaseRegisteredUsers[i].tarea
+              //     );
+              chat.server.interns_Insert(JSONSTRING, 'INSERT');         
           });
         },
         generateTable: function(){

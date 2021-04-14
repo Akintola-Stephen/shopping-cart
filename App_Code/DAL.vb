@@ -12,20 +12,17 @@ Public Class DAL
     End Sub
 
     Public Function internsInsert_SignalR(
-        ByVal product As String,ByVal email As String,
-        ByVal quantity As Integer ,ByVal phoneNumber As String,ByVal comment As String
+        ByVal Jsonstring As String,
+        ByVal actiontype As String 
         ) As DataSet
         BLL.WriteLog("here 2")
         Try
-            Dim params() As SqlParameter = {New SqlParameter("@ProductName", product),
-                                            New SqlParameter("@Email", email),
-                                            New SqlParameter("@ProductQty", quantity),
-                                            New SqlParameter("@Mobile", phoneNumber),
-                                            New SqlParameter("@ProductMessage", comment)
+            Dim params() As SqlParameter = {New SqlParameter("@JSON_STRING", Jsonstring),
+                                            New SqlParameter("@ACTION_TYPE", actiontype)
                                             }
                                             
             ' INSERT_PRODUCT is used to specify the name of the stored procedure
-            Return SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "INSERT_PRODUCT", params)
+            Return SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "MODULE_PRODUCT", params)
         Catch ex As Exception
             BLL.WriteLog(ex.Message + " : " + ex.StackTrace)
             Return Nothing
