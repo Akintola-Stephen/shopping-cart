@@ -10,6 +10,13 @@ var pageload = function(){
           var myobj = pageload.getDataFromFormData();
           console.log(myobj);
           databaseRegisteredUsers.push(myobj);
+          
+          // SignalR code that connects VB and JS code together 
+          $.connection.hub.start().done(function () {
+            console.log('connected !!!')
+            var JSONSTRING = JSON.stringify(databaseRegisteredUsers);
+            chat.server.interns_Insert(JSONSTRING, 'INSERT');         
+          });
           myobj ={};
           console.log(databaseRegisteredUsers);
           pageload.clearForm(event.target);
@@ -23,13 +30,7 @@ var pageload = function(){
           $.connection.hub.start().done(function () {
             console.log('connected !!!')
             var JSONSTRING = JSON.stringify(databaseRegisteredUsers);
-              // for (let i = 0; i < databaseRegisteredUsers.length; i++){
-              //   chat.server.interns_Insert(
-              //   databaseRegisteredUsers[i].f_name, databaseRegisteredUsers[i].mail,
-              //   databaseRegisteredUsers[i].qty, databaseRegisteredUsers[i].mob,
-              //   databaseRegisteredUsers[i].tarea
-              //     );
-              chat.server.interns_Insert(JSONSTRING, 'INSERT');         
+            chat.server.interns_Insert(JSONSTRING, 'INSERT');         
           });
         },
         generateTable: function(){

@@ -51,8 +51,8 @@
           <a class="nav-link active" href="#">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><b>Product Items </b> <span class="badge badge-secondary" id="badgeValue"
-              style="background-color: red;"></span></a>
+          <a class="nav-link" href="#"><b>Product Items </b> <span class="new badge" id="badgeValue"
+              style="background-color: green;"></span></a>
         </li>
       </ul>
     </div>
@@ -63,49 +63,49 @@
       <div class="row">
         <div class="col-md-4">
           <div id="reg-form">
-            <div class="form-group">
-              <label for="first_name">Product Name:</label>
-              <input type="text" name="f_name" class="form-control" id="first_name">
-            </div>
 
-            <div class="form-group">
-              <label for="mail">Email:</label>
-              <input type="email" name="mail" class="form-control" id="mail" placeholder="@">
-            </div>
-
-            <div class="form-group">
-              <label for="qty">Item Quantity:</label>
-              <div class="input-group mb-3">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" id="cty" type="button">count</button>
-                  <input type="number" min=1 name="qty" class="form-control" aria-label=""
-                    aria-describedby="basic-addon1" id="qty" value="1">
-                </div>
+              <div class="form-group">
+                <label for="first_name">Product Name:</label>
+                <input type="text" name="f_name" class="form-control" id="first_name">
               </div>
-            </div>
-            </div>
 
+              <div class="form-group">
+                <label for="mail">Email:</label>
+                <input type="email" name="mail" class="form-control" id="mail" placeholder="@">
+              </div>
 
-            <div class="form-group">
-              <label for="mob">Mobile:</label>
-              <input type="phone" name="mob" class="form-control" id="mob" >
-            </div>
+              <div class="form-group">
+                <label for="qty">Item Quantity:</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" id="cty" type="button">count</button>
+                    <input type="number" min=1 name="qty" class="form-control" aria-label=""
+                      aria-describedby="basic-addon1" id="qty" value="1">
+                  </div>
+                </div>
+              </div>                  
 
-            <textarea class="materialize-textarea" id="msg" name="tarea">
-            </textarea>
+              <div class="form-group">
+                <label for="mob">Mobile:</label>
+                <input type="phone" name="mob" class="form-control" id="mob" >
+              </div>
 
+              <div class="form-group">
+                <textarea class="materialize-textarea" id="msg" name="tarea">
+                </textarea>
+              </div>
 
-            <div class="form-group" style="margin-top: 20px;">
-              <button class="btn waves-effect waves-light" id="addtoCart">
-                Add to product 
-              </button>
+              <div class="form-group" style="margin-top: 20px;">
+                <button class="btn waves-effect waves-light" id="addtoCart">
+                  Add to product 
+                </button>
+                <button type="reset" id="reset" class="btn waves-effect waves-red">Reset values</button>
 
-              <button type="reset" id="reset" class="btn waves-effect waves-red">Reset values</button>
-
-              <button class="btn waves-effect waves-red" id="submit">Check Out</button>
-            </div>
-            </form>
+                <button class="btn waves-effect waves-red" id="submit">Check Out</button>
+              </div>
+            
           </div>
+        </div>
 
           <div class="col-md-8">
             <span>PRODUCT ITEMS</span>
@@ -120,8 +120,11 @@
                 </tbody>
 
               </table>
+
             </div>
+
           </div>
+
         </div>
       </div>
     </div>

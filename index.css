@@ -110,5 +110,23 @@ button[type="reset"]{
     font-family: Ubuntu;
 }
 
+input[type="text"]{
+    font-family: Ubuntu;
+    font-size: 8px;
+}
 
+input[type="email"]{
+    font-family: Ubuntu;
+    font-size: 8px;
+}
+
+input[type="number"]{
+    font-family: Ubuntu;
+    font-size: 8px;
+}
+
+textarea{
+    font-family: Ubuntu;
+    font-size: 8px;
+}
 
