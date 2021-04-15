@@ -63,8 +63,7 @@ var pageload = function(){
          },
      
 
-        pageEvents: function(){
-          
+        pageEvents: function(){        
           $(".deleteBtn").off("click").on("click", function(event){
             event.preventDefault()
             var product_id = $(this).data("id");
