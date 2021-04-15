@@ -15,13 +15,13 @@ Public Class DAL
         ByVal JSON_STRING As String,
         ByVal ACTION_TYPE As String 
         ) As DataSet
-        BLL.WriteLog("here 2")
+       
         Try
             Dim params() As SqlParameter = {New SqlParameter("@JSON_STRING", JSON_STRING),
                                             New SqlParameter("@ACTION_TYPE", ACTION_TYPE)
                                             }
                                             
-            ' INSERT_PRODUCT is used to specify the name of the stored procedure
+            ' MODULE_PRODUCT is used to specify the name of the stored procedure
             Return SqlHelper.ExecuteDataset(conn, CommandType.StoredProcedure, "MODULE_PRODUCT", params)
         Catch ex As Exception
             BLL.WriteLog(ex.Message + " : " + ex.StackTrace)

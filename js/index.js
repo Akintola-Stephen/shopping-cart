@@ -32,9 +32,7 @@ var pageload = function(){
             var myobj = pageload.getDataFromFormData();
             console.log(myobj);
             databaseRegisteredUsers.push(myobj);
-
-             //  pageload.generateTable();
-          
+            
             var JSON_STRING = JSON.stringify(databaseRegisteredUsers);
             chat.server.interns_Insert(JSON_STRING, 'INSERT')
             .done(function(data){
@@ -58,6 +56,15 @@ var pageload = function(){
           pageload.pageEvents();
         },
 
+        validate: function(){
+          if( $('#PRODUCT_NAME').val() == "" ) {
+            alert( "Please provide product name!" );
+            document.myForm.Name.focus() ;
+            return false;
+          }
+         },
+     
+
         pageEvents: function(){
           $(".deleteBtn").off("click").on("click", function(event){
             event.preventDefault()
@@ -71,17 +78,11 @@ var pageload = function(){
             });
           });
           
-       
 
           $("#addtoCart").off("click").on("click", function(event){
             event.preventDefault();
             pageload.addProduct(event);
           });
-
-          $("#submit").off("click").on("click", function(event){
-            event.preventDefault();
-            pageload.checkOut();
-           });
 
           $("#cty").off("click").on("click", function(event){
             var count = parseInt($("#qty").val());
@@ -89,14 +90,17 @@ var pageload = function(){
             $("#qty").val(count)
           });
         },
+        
         getDataFromFormData: function() {
           var obj = {};
           $("#reg-form input, #reg-form textarea").filter(function(i,o){
               obj[$(o).attr("name")] = $(o).val();
           });
+          pageload.validate();
           return obj;
          // return  Array.from(data.entries()).reduce((data, entry) => { data[entry[0]] = entry[1]; return data; }, {})
         },
+
         fetchData: function(){
           $.connection.hub.start().done(function () {
             console.log('connected !!!')
@@ -110,6 +114,7 @@ var pageload = function(){
     }
 
 }();
+
 
 pageload.init();
 

@@ -17,7 +17,7 @@ Imports System.Drawing
             ByVal JSON_STRING As String,
             ByVal ACTION_TYPE As String  
             ) As String
-            BLL.WriteLog("here")
+            
             Dim status As String = "ERROR"
             Dim dc_return As New Dictionary(Of String, Object)
             
