@@ -68,12 +68,12 @@
 
               <div class="form-group">
                 <label for="first_name">Product Name:</label>
-                <input type="text" name="f_name" class="form-control" id="first_name">
+                <input type="text" name="PRODUCT_NAME" class="form-control" id="first_name">
               </div>
 
               <div class="form-group">
                 <label for="mail">Email:</label>
-                <input type="email" name="mail" class="form-control" id="mail" placeholder="@">
+                <input type="email" name="USER_MAIL" class="form-control" id="mail" placeholder="@">
               </div>
 
               <div class="form-group">
@@ -81,7 +81,7 @@
                 <div class="input-group mb-3">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" id="cty" type="button">count</button>
-                    <input type="number" min=1 name="qty" class="form-control" aria-label=""
+                    <input type="number" min=1 name="PRODUCT_QUANTITY" class="form-control" aria-label=""
                       aria-describedby="basic-addon1" id="qty" value="1">
                   </div>
                 </div>
@@ -89,11 +89,11 @@
 
               <div class="form-group">
                 <label for="mob">Mobile:</label>
-                <input type="tel" name="mob" class="form-control" id="mob" >
+                <input type="tel" name="MOBILE_NUMBER" class="form-control" id="mob" >
               </div>
 
               <div class="form-group">
-                <textarea class="materialize-textarea" id="msg" name="tarea">
+                <textarea class="materialize-textarea" id="msg" name="PRODUCT_MSG">
                 </textarea>
               </div>
 
@@ -101,9 +101,9 @@
                 <button class="btn waves-effect waves-light" id="addtoCart">
                   Add product 
                 </button>
+                
                 <button type="reset" id="reset" class="btn waves-effect waves-red">Reset values</button>
 
-                <button class="btn waves-effect waves-red" id="submit">Check Out</button>
               </div>
             
           </div>
@@ -111,11 +111,10 @@
 
           <div class="col-md-8">
             <span>PRODUCT ITEMS</span>
-            <button class="btn btn-success" id="fetch" name="fetch"
-              style="margin-left: 450px; margin-bottom:20px; border:1px thick black">View products</button>
+            
             <div class="card">
               <!-- Table gets populated via users inputs -->
-              <table class="table" id="productsTable">
+              <table class="table hover" id="productsTable">
 
                 <tbody>
 
