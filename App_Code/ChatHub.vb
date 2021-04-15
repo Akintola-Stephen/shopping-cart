@@ -27,6 +27,7 @@ Imports System.Drawing
                 dc_return.Add("RESULT", dt)
                 dc_return.Add("ACTION_TYPE", ACTION_TYPE)
                 status = "SUCCESS"
+                
             Catch ex As Exception
                 BLL.WriteLog(ex.Message + " : " + ex.StackTrace)
             End Try
