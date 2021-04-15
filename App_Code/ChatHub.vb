@@ -31,7 +31,7 @@ Imports System.Drawing
             End Try
 
             dc_return.Add("STATUS", status)
-            Clients.All.broadcastMessage(JsonConvert.SerializeObject(dc_return))
+            Return JsonConvert.SerializeObject(dc_return)
         End Function
 
 

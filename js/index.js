@@ -12,7 +12,7 @@ var pageload = function(){
           // SignalR code that allows communication between VB and JS code together 
           var chat = $.connection.chatHub;
           console.warn(chat);
-          
+
           // Establish a connection to database
           $.connection.hub.start().done(function () {
             console.log('connected !!!')
@@ -23,13 +23,16 @@ var pageload = function(){
              //  pageload.generateTable();
             pageload.generateTable(); 
             var JSON_STRING = JSON.stringify(databaseRegisteredUsers);
-            chat.server.interns_Insert(JSON_STRING, 'INSERT');         
-          });
+            chat.server.interns_Insert(JSON_STRING, 'INSERT')
+            .done(function(data){
+              console.log(data);
+            });   
           
-          console.log(databaseRegisteredUsers);
-          pageload.clearForm(event.target);
-       
-          $("#badgeValue").html(databaseRegisteredUsers.length);
+            console.log(databaseRegisteredUsers);
+            pageload.clearForm(event.target);
+         
+            $("#badgeValue").html(databaseRegisteredUsers.length);      
+          });
         },
 
         checkOut: function(){
@@ -126,8 +129,9 @@ var pageload = function(){
 
           $("#addtoCart").off("click").on("click", function(event){
             event.preventDefault();
-           pageload.addProduct(event);
+            pageload.addProduct(event);
           });
+
           $("#submit").off("click").on("click", function(event){
             event.preventDefault();
             pageload.checkOut();
