@@ -22,11 +22,9 @@ var pageload = function(){
 
         addProduct: function(event){
           event.preventDefault();         
-          // SignalR code that allows communication between VB and JS code together 
-        
           console.warn(chat);
 
-          // Establish a connection to database
+          // SignalR code that allows communication between VB and JS code together 
           $.connection.hub.start().done(function () {
             console.log('connected !!!')
             var myobj = pageload.getDataFromFormData();
@@ -66,6 +64,7 @@ var pageload = function(){
      
 
         pageEvents: function(){
+          
           $(".deleteBtn").off("click").on("click", function(event){
             event.preventDefault()
             var product_id = $(this).data("id");
